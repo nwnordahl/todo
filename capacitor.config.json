@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.todo",
+  "appName": "todo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {},
+  "linuxAndroidStudioPath": "/usr/bin/android-studio"
+}
