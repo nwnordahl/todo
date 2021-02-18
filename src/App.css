@@ -120,6 +120,7 @@ select {
   cursor: pointer;
   width: 12rem;
 }
+
 /* Arrow */
 .select::after {
   content: "\25BC";
@@ -131,6 +132,7 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
+
 /* Transition */
 /*
 .select:hover::after {

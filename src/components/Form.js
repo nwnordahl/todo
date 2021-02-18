@@ -1,26 +1,32 @@
-import React from 'react';
-
-const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
-  const inputTextHandler = (e) => {
-    console.log(e.target.value);
+export default function Form({
+  inputText,
+  setInputText,
+  todos,
+  setTodos,
+  setStatus,
+}) {
+  function inputTextHandler(e) {
     setInputText(e.target.value);
   }
 
-  const submitTodoHandler = (e) => {
+  function submitTodoHandler(e) {
     e.preventDefault();
-    setTodos([
-      ...todos, {text: inputText, completed: false, id: Math.random() * 1000}
-    ]);
+    setTodos([...todos, { text: inputText, completed: false, id: Date.now() }]);
     setInputText("");
   }
 
-  const statusHandler = (e) => {
+  function statusHandler(e) {
     setStatus(e.target.value);
   }
 
   return (
     <form>
-      <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
+      <input
+        value={inputText}
+        onChange={inputTextHandler}
+        className="todo-input"
+        type="text"
+      />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
@@ -32,7 +38,5 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
         </select>
       </div>
     </form>
-  )
+  );
 }
-
-export default Form;
